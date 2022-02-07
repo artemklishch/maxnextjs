@@ -4,20 +4,22 @@ module.exports = (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER) {
     return {
       env: {
-        mongodb_username: 'maximilian',
-        mongodb_password: '2YkcXq43KyPk0vqp',
-        mongodb_clustername: 'cluster0',
-        mongodb_database: 'my-site-dev',
+        // mongodb_username: 'maximilian',
+        // mongodb_password: '2YkcXq43KyPk0vqp',
+        // mongodb_clustername: 'cluster0',
+        // mongodb_database: 'my-site-dev',
+        BASE_URL: "https://maxreact1-default-rtdb.firebaseio.com/events.json",
       },
     };
   }
 
   return {
     env: {
-      mongodb_username: 'maximilian',
-      mongodb_password: '2YkcXq43KyPk0vqp',
-      mongodb_clustername: 'cluster0',
-      mongodb_database: 'my-site',
+      // mongodb_username: 'maximilian',
+      // mongodb_password: '2YkcXq43KyPk0vqp',
+      // mongodb_clustername: 'cluster0',
+      // mongodb_database: 'my-site',
+      BASE_URL: "https://maxreact1-default-rtdb.firebaseio.com/events.json",
     },
   };
 };
