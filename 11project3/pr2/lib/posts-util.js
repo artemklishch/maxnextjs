@@ -1,14 +1,14 @@
 import fs from "fs";
 import path from "path";
-import matter from "grey-matter";
+import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-function getPostData(fileName) {
-  const filePath = path.join(postsDirectory, fileName);
+export function getPostData(postId) {
+  const postSlug = postId.replace(/\.md$/, ""); // удаляет расширение файла
+  const filePath = path.join(postsDirectory, postSlug + '.md');
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);
-  const postSlug = fileName.replace(/\.md$/, ""); // удаляет расширение файла
   const postData = {
     slug: postSlug,
     ...data,
